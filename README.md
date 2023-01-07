@@ -1,2 +1,1 @@
-# text-rpg
-Text based RPD
+# Text Based RPG
