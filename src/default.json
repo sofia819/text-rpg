@@ -1,0 +1,263 @@
+[
+  {
+    "section": 1,
+    "content": [
+      {
+        "text": "You are a bank robber on your first mission.",
+        "options": []
+      },
+      {
+        "text": "You walk into a bank.",
+        "options": []
+      },
+      {
+        "text": "You pull out your weapon at the bank teller.",
+        "options": []
+      },
+      {
+        "text": "Your weapon of choice is a:",
+        "options": [
+          {
+            "option": "Gun",
+            "section": 3
+          },
+          {
+            "option": "Knife",
+            "section": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": 2,
+    "content": [
+      {
+        "text": "The security guard tackles you and causes you to drop the knife.",
+        "options": []
+      },
+      {
+        "text": "The bank teller calls the police.",
+        "options": []
+      },
+      {
+        "text": "You are arrested.",
+        "options": []
+      }
+    ]
+  },
+  {
+    "section": 3,
+    "content": [
+      {
+        "text": "The bank teller freezes when he spots the weapon.",
+        "options": []
+      },
+      {
+        "text": "You calmly slide a piece of paper through the window, requesting $50,000 in cash.",
+        "options": []
+      },
+      {
+        "text": "The bank teller kneels down behind the counter.",
+        "options": []
+      },
+      {
+        "text": "An alarm is sounded, alerting the entire bank that an emergency has taken place.",
+        "options": []
+      },
+      {
+        "text": "You:",
+        "options": [
+          {
+            "option": "Flee the scene",
+            "section": 4
+          },
+          {
+            "option": "Raise your weapon at a patron",
+            "section": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": 4,
+    "content": [
+      {
+        "text": "You escape to your hideout.",
+        "options": []
+      },
+      {
+        "text": "Your boss is not happy with your failure.",
+        "options": []
+      },
+      {
+        "text": "Your boss executes you on the spot as an example.",
+        "options": []
+      }
+    ]
+  },
+  {
+    "section": 5,
+    "content": [
+      {
+        "text": "You threaten to kill the man if your demands are not met.",
+        "options": []
+      },
+      {
+        "text": "The bank teller complies.",
+        "options": []
+      },
+      {
+        "text": "The bank teller places bundles of cash into a paper bag and slides it through the gap of the window.",
+        "options": []
+      },
+      {
+        "text": "You take the bag and leave the scene.",
+        "options": []
+      },
+      {
+        "text": "Your getaway car is parked at the entrance.",
+        "options": []
+      },
+      {
+        "text": "You board the car and start driving.",
+        "options": []
+      },
+      {
+        "text": "You can hear police sirens coming from behind you.",
+        "options": []
+      },
+      {
+        "text": "You turn",
+        "options": [
+          {
+            "option": "Left",
+            "section": 6
+          },
+          {
+            "option": "Right",
+            "section": 7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": 6,
+    "content": [
+      {
+        "text": "There is roadwork on this street and you are forced to slow down.",
+        "options": []
+      },
+      {
+        "text": "The police catch up with you.",
+        "options": []
+      },
+      {
+        "text": "You are arrested.",
+        "options": []
+      }
+    ]
+  },
+  {
+    "section": 7,
+    "content": [
+      {
+        "text": "You speed through the empty streets.",
+        "options": []
+      },
+      {
+        "text": "Suddenly, you realize that the car is running out of gas.",
+        "options": []
+      },
+      {
+        "text": "You ditch the car.",
+        "options": []
+      },
+      {
+        "text": "You:",
+        "options": [
+          {
+            "option": "Go to a supermarket",
+            "section": 9
+          },
+          {
+            "option": "Steal another car",
+            "section": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": 8,
+    "content": [
+      {
+        "text": "You leave the car.",
+        "options": []
+      },
+      {
+        "text": "You run to a parked car on the streets.",
+        "options": []
+      },
+      {
+        "text": "The doors are locked.",
+        "options": []
+      },
+      {
+        "text": "You spot another car across the street.",
+        "options": []
+      },
+      {
+        "text": "You run towards it.",
+        "options": []
+      },
+      {
+        "text": "You are hit by another incoming car as you cross the road.",
+        "options": []
+      },
+      {
+        "text": "You are killed on the spot.",
+        "options": []
+      }
+    ]
+  },
+  {
+    "section": 9,
+    "content": [
+      {
+        "text": "You enter a supermarket.",
+        "options": []
+      },
+      {
+        "text": "Due to the amount of people, you blend into the crowd.",
+        "options": []
+      },
+      {
+        "text": "You stay for a while.",
+        "options": []
+      },
+      {
+        "text": "You escape the police.",
+        "options": []
+      },
+      {
+        "text": "You return to your hideout.",
+        "options": []
+      },
+      {
+        "text": "Your boss commends your work.",
+        "options": []
+      },
+      {
+        "text": "Your boss takes the paper bag filled with cash.",
+        "options": []
+      },
+      {
+        "text": "You are shot in the back.",
+        "options": []
+      }
+    ]
+  }
+]
