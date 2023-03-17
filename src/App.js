@@ -1,12 +1,12 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import story from './default.json';
-import DialoguePanel from './components/DialougePanel';
+import GameScreen from './components/GameScreen';
 
 const App = () => {
   return (
     <ChakraProvider>
-      <DialoguePanel story={story} />
+      <GameScreen story={story} />
     </ChakraProvider>
   );
 };

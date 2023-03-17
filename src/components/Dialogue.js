@@ -7,13 +7,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-const Dialogue = ({
-  text,
-  options,
-  handleOptionClick,
-  isOnLastDialogue,
-  handleRestart,
-}) => {
+const Dialogue = ({ text, options, handleOptionClick }) => {
   return (
     <Box>
       <VStack spacing="1em">
@@ -33,9 +27,6 @@ const Dialogue = ({
                 })}
               </VStack>
             </ButtonGroup>
-          )}
-          {isOnLastDialogue && options?.length === 0 && (
-            <Button onClick={handleRestart}>Restart</Button>
           )}
         </Center>
       </VStack>
