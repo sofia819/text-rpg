@@ -24,6 +24,12 @@ const StoryScreen = ({ story, setGameState }) => {
     setCurrentSectionIndex(optionSection);
   };
 
+  const handleStoryEnding = () => {
+    setGameState(GameStates.END);
+    setCurrentSectionIndex(0);
+    setCurrentDialogueIndex(0);
+  };
+
   const isOnLastDialogue =
     currentDialogueIndex === sections[currentSectionIndex].length - 1;
 
@@ -41,9 +47,7 @@ const StoryScreen = ({ story, setGameState }) => {
           handleDialogueClick={handleDialogueClick}
           handleOptionClick={handleOptionClick}
         />
-        {isStoryEnded && (
-          <Button onClick={() => setGameState(GameStates.END)}>End</Button>
-        )}
+        {isStoryEnded && <Button onClick={handleStoryEnding}>End</Button>}
       </VStack>
     </Center>
   );
