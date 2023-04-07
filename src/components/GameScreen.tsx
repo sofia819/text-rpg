@@ -4,9 +4,33 @@ import StoryScreen from './StoryScreen';
 import StartScreen from './StartScreen';
 import EndScreen from './EndScreen';
 import GameStates from '../utils/GameStates';
+import { type Option } from './Dialogue';
 
-const GameScreen = ({ story }) => {
-  const [gameState, setGameState] = useState(GameStates.START);
+export type GameState = typeof GameStates[keyof typeof GameStates];
+
+export type SetGameState = React.Dispatch<React.SetStateAction<GameState>>;
+
+type Dialogue = {
+  text: string;
+  options?: Option[];
+};
+
+export type StorySection = {
+  sectionNumber: number;
+  sectionDialogues: Dialogue[];
+};
+
+export type CreditsContent = {
+  creator: string;
+};
+
+interface GameScreenProps {
+  storySections: StorySection[];
+  credits: CreditsContent;
+}
+
+const GameScreen = ({ storySections, credits }: GameScreenProps) => {
+  const [gameState, setGameState] = useState<GameState>(GameStates.START);
 
   return (
     <Box w="100vw" h="100vh">
@@ -22,10 +46,13 @@ const GameScreen = ({ story }) => {
               <StartScreen setGameState={setGameState} />
             )}
             {gameState === GameStates.STORY && (
-              <StoryScreen story={story} setGameState={setGameState} />
+              <StoryScreen
+                storySections={storySections}
+                setGameState={setGameState}
+              />
             )}
             {gameState === GameStates.END && (
-              <EndScreen setGameState={setGameState} />
+              <EndScreen setGameState={setGameState} credits={credits} />
             )}
           </Flex>
         </Card>

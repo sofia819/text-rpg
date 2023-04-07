@@ -7,7 +7,18 @@ import {
   VStack,
 } from '@chakra-ui/react';
 
-const Dialogue = ({ text, options, handleOptionClick }) => {
+export type Option = {
+  option: string;
+  sectionNumber: number;
+};
+
+interface DialogueProps {
+  text: string;
+  options: Option[];
+  handleOptionClick: (section: number) => void;
+}
+
+const Dialogue = ({ text, options, handleOptionClick }: DialogueProps) => {
   return (
     <Box>
       <VStack spacing="1em">
@@ -20,7 +31,9 @@ const Dialogue = ({ text, options, handleOptionClick }) => {
               <VStack spacing="1em">
                 {options.map((option) => {
                   return (
-                    <Button onClick={() => handleOptionClick(option.section)}>
+                    <Button
+                      onClick={() => handleOptionClick(option.sectionNumber)}
+                    >
                       {option.option}
                     </Button>
                   );

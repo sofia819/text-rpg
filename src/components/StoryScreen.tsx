@@ -3,23 +3,28 @@ import { Center, Button, VStack } from '@chakra-ui/react';
 import Dialogue from './Dialogue';
 import GameStates from '../utils/GameStates';
 
-const StoryScreen = ({ story, setGameState }) => {
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(1);
-  const [currentDialogueIndex, setCurrentDialogueIndex] = useState(0);
+import { type StorySection, type SetGameState } from './GameScreen';
 
-  const sections = {};
+interface StoryScreenProps {
+  storySections: StorySection[];
+  setGameState: SetGameState;
+}
 
-  story.forEach((section) => {
-    sections[section.section] = section.content;
-  });
+const StoryScreen = ({ storySections, setGameState }: StoryScreenProps) => {
+  const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(1);
+  const [currentDialogueIndex, setCurrentDialogueIndex] = useState<number>(0);
+
+  const currentSection = storySections.find(
+    (section) => section.sectionNumber === currentSectionIndex,
+  );
 
   const handleDialogueClick = () => {
-    if (currentDialogueIndex + 1 < sections[currentSectionIndex].length) {
+    if (currentDialogueIndex + 1 < currentSection.sectionDialogues.length) {
       setCurrentDialogueIndex(currentDialogueIndex + 1);
     }
   };
 
-  const handleOptionClick = (optionSection) => {
+  const handleOptionClick = (optionSection: number) => {
     setCurrentDialogueIndex(0);
     setCurrentSectionIndex(optionSection);
   };
@@ -31,9 +36,9 @@ const StoryScreen = ({ story, setGameState }) => {
   };
 
   const isOnLastDialogue =
-    currentDialogueIndex === sections[currentSectionIndex].length - 1;
+    currentDialogueIndex === currentSection.sectionDialogues.length - 1;
 
-  const currentDialogue = sections[currentSectionIndex][currentDialogueIndex];
+  const currentDialogue = currentSection.sectionDialogues[currentDialogueIndex];
 
   const isStoryEnded =
     isOnLastDialogue && currentDialogue.options?.length === 0;
@@ -44,7 +49,6 @@ const StoryScreen = ({ story, setGameState }) => {
         <Dialogue
           text={currentDialogue.text}
           options={currentDialogue.options}
-          handleDialogueClick={handleDialogueClick}
           handleOptionClick={handleOptionClick}
         />
         {isStoryEnded && <Button onClick={handleStoryEnding}>End</Button>}
