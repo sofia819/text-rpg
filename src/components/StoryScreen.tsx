@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Center, Button, VStack } from '@chakra-ui/react';
+import { Center } from '@chakra-ui/react';
 import Dialogue from './Dialogue';
 import GameStates from '../utils/GameStates';
 
@@ -18,8 +18,19 @@ const StoryScreen = ({ storySections, setGameState }: StoryScreenProps) => {
     (section) => section.sectionNumber === currentSectionIndex,
   );
 
-  const handleDialogueClick = () => {
-    if (currentDialogueIndex + 1 < currentSection.sectionDialogues.length) {
+  const hasPreviousDialogue = currentDialogueIndex - 1 >= 0;
+
+  const handlePreviousDialogue = () => {
+    if (hasPreviousDialogue) {
+      setCurrentDialogueIndex(currentDialogueIndex - 1);
+    }
+  };
+
+  const hasNextDialogue =
+    currentDialogueIndex + 1 < currentSection.sectionDialogues.length;
+
+  const handleNextDialogue = () => {
+    if (hasNextDialogue) {
       setCurrentDialogueIndex(currentDialogueIndex + 1);
     }
   };
@@ -44,15 +55,17 @@ const StoryScreen = ({ storySections, setGameState }: StoryScreenProps) => {
     isOnLastDialogue && currentDialogue.options?.length === 0;
 
   return (
-    <Center onClick={handleDialogueClick}>
-      <VStack spacing="1em">
-        <Dialogue
-          text={currentDialogue.text}
-          options={currentDialogue.options}
-          handleOptionClick={handleOptionClick}
-        />
-        {isStoryEnded && <Button onClick={handleStoryEnding}>End</Button>}
-      </VStack>
+    <Center>
+      <Dialogue
+        text={currentDialogue.text}
+        options={currentDialogue.options}
+        handleOptionClick={handleOptionClick}
+        isStoryEnded={isStoryEnded}
+        hasPreviousDialogue={hasPreviousDialogue}
+        handlePreviousDialogue={handlePreviousDialogue}
+        handleNextDialogue={handleNextDialogue}
+        handleStoryEnding={handleStoryEnding}
+      />
     </Center>
   );
 };
