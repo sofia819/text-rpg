@@ -5,8 +5,9 @@ import StartScreen from './StartScreen';
 import EndScreen from './EndScreen';
 import GameStates from '../utils/GameStates';
 import { type Option } from './Dialogue';
+import ThemeSwitcher from './ThemeSwitcher';
 
-export type GameState = typeof GameStates[keyof typeof GameStates];
+export type GameState = (typeof GameStates)[keyof typeof GameStates];
 
 export type SetGameState = React.Dispatch<React.SetStateAction<GameState>>;
 
@@ -35,7 +36,8 @@ const GameScreen = ({ storySections, credits }: GameScreenProps) => {
   return (
     <Box w="100vw" h="100vh">
       <Center width="100vw" height="100vh">
-        <Card variant="outline" width="70vw" height="70vh">
+        <Card variant="outline" width="90vw" height="90vh">
+          <ThemeSwitcher />
           <Flex
             width="100%"
             height="100%"
